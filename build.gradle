@@ -1,0 +1,58 @@
+buildscript {
+    repositories {
+        mavenCentral()
+        dependencies {
+            classpath 'org.junit.platform:junit-platform-gradle-plugin:1.1.0'
+        }
+    }
+}
+
+plugins {
+    id'java'
+    id'application'
+    id'eclipse'
+}
+
+apply plugin: 'org.junit.platform.gradle.plugin'
+apply plugin: 'maven'
+
+def vertxVersion = "3.5.1"
+
+version = "0.4.1"
+mainClassName = 'StarterVerticle'
+group 'project'
+sourceCompatibility = 1.8
+
+version = project.hasProperty('isSnapShot')?version + '-' + getDate() + '-SNAPSHOT': version
+
+compileJava.options.encoding = 'UTF-8'
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    //Junit 5
+    testCompile("org.junit.jupiter:junit-jupiter-api:5.1.0")
+    testRuntime("org.junit.jupiter:junit-jupiter-engine:5.1.0")
+    //Junit 5 vintage to run Junit4 Tests
+    testCompile("junit:junit:4.12")
+    testRuntime("org.junit.vintage:junit-vintage-engine:5.1.0")
+
+    //logger
+    compile group: 'org.slf4j', name: 'slf4j-log4j12', version: '1.7.25'
+
+    //Vertx
+    compile "io.vertx:vertx-core:$vertxVersion"
+    compile "io.vertx:vertx-service-proxy:$vertxVersion"
+    compile "io.vertx:vertx-sockjs-service-proxy:$vertxVersion"
+    compile "io.vertx:vertx-hazelcast:$vertxVersion"
+    compile "io.vertx:vertx-web:$vertxVersion"
+    compile "io.vertx:vertx-config:$vertxVersion"
+    compileOnly "io.vertx:vertx-codegen:$vertxVersion"
+    testCompile "io.vertx:vertx-unit:$vertxVersion"
+    testCompile "io.vertx:vertx-junit5:$vertxVersion"
+}

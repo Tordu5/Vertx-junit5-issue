@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: io.vertx:vertx-sockjs-service-proxy:3.5.1">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.vertx/vertx-sockjs-service-proxy/3.5.1/e899270bc5b4c5a722fa2cf8c872f0072f5ccbc1/vertx-sockjs-service-proxy-3.5.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.vertx/vertx-sockjs-service-proxy/3.5.1/b1cd2d4aae4b4aedecc61f5ea9c549d27e31106a/vertx-sockjs-service-proxy-3.5.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
